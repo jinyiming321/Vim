@@ -23,7 +23,7 @@ map <F4> :NERDTreeToggle<CR>
 imap <F4> <ESC>:NERDTreeToggle<CR>
 
 " config f nerdtree
-let NERDChristmasTree=1
+"let NERDChristmasTree=1
 let NERDTreeAutoCenter=1
 let NERDTreeBookmarksFile='/root/.vim/tree.txt'
 let NERDTreeMouseMode=2
@@ -32,8 +32,8 @@ let NERDTreeShowFiles=1
 let NERDTreeShowHidden=1
 let NERDTreeShowLineNumbers=1
 let NERDTreeWinPos='right'
-let NERDTreeWinSize=31
-"
+let NERDTreeWinSize=21
+
 filetype plugin on
 set diffexpr=MyDiff()
 set tags=tags
@@ -51,15 +51,17 @@ set smartindent
 let &termencoding=&encoding
 set helplang=cn
 set langmenu=zh_CN.UTF-8
-
 set history=1000
 set nobackup
 set noswapfile
 
 set statusline=%F%m%r%h%w\ [FORMAT=%{&ff}]\ [TYPE=%Y]\ [POS=%l,%v][%p%%]\ %{strftime(\"%d/%m/%y\ -\ %H:%M\")}
+" can make perl
+autocmd BufNewFile,BufRead *.p? compiler perl
 
 set completeopt=longest,menu
 nnoremap <silent> <F3> :Grep<CR>
+set wrap
 set columns=80
 set ruler
 set textwidth=80
